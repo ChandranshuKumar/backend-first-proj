@@ -1,8 +1,13 @@
 import express, { Application, Request, Response } from 'express';
 import 'dotenv/config';
+import { DB_CONFIG } from './src/config/db';
+const mongoose = require('mongoose');
 
 const app: Application = express();
 
+const { dbUrl, connectionOptions } = DB_CONFIG as any;
+
+mongoose.connect(dbUrl, connectionOptions).then(() => console.log('MongoDB connected successfully'));
 
 app.get('/', (req: Request, res: Response) => {
     res.json({
