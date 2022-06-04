@@ -1,7 +1,8 @@
 FROM node:17
-WORKDIR /usr/scr/app
-COPY package*.json ./
-RUN npm install
-COPY . .
+ENV APP_HOME /first-node-app
+WORKDIR $APP_HOME
+COPY . $APP_HOME/
+RUN npm ci
+RUN npm run build
 EXPOSE 8080
-CMD ["node", "dist/index.js"]
+CMD ["node", "build"]

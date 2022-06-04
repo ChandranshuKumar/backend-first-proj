@@ -9,7 +9,7 @@
         "sourceMap": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "outDir": "dist"
+        "outDir": "build"
     },
     "include": [
         "./src/**/*",
