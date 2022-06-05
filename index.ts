@@ -1,16 +1,18 @@
 import express, { Application, Request, Response } from 'express';
 import 'dotenv/config';
 import { DB_CONFIG } from './src/config/db';
-const mongoose = require('mongoose');
-const Todos = require('./src/schema/todos');
+const mysql = require('mysql');
 
 const app: Application = express();
 
-const { dbUrl, connectionOptions } = DB_CONFIG as any;
-
-mongoose.connect(dbUrl, connectionOptions)
-.then(() => console.log('MongoDB connected successfully'))
-.catch((err: any) => console.log("DB connection errored: ", err));
+const dbConnection = mysql.createConnection(DB_CONFIG);
+dbConnection.connect((err: any) => {
+    if(err) {
+        console.error('Database connection failed: ' + err);
+        return;
+    }
+    console.log('Connected to database.');
+})
 
 app.get('/', (req: Request, res: Response) => {
     res.json({
