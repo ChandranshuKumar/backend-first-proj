@@ -1,4 +1,4 @@
-FROM node:17
+FROM --platform=linux/amd64 node:17
 ENV APP_HOME /first-node-app
 WORKDIR $APP_HOME
 COPY . $APP_HOME/
