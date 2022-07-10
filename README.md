@@ -1,1 +1,1 @@
-<div style="color:green">Hello World!</div>
+<div style="text-align:center">Simple Nodejs App. <br>TypeScript + Docker + MYSQL DB</div>
