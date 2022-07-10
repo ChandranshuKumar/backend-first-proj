@@ -1,1 +1,1 @@
-<div style="text-align:center">Simple Nodejs App. <br>TypeScript + Docker + MYSQL DB</div>
+<div style="text-align:center">Simple Nodejs App. <br>Express + TypeScript + Docker + ESLint + Prettier + Husky</div>
