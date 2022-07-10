@@ -12,6 +12,4 @@ app.get('/', (req: Request, res: Response) => {
 const PORT: number = Number(process.env.PORT) || 8080;
 const HOST = '0.0.0.0';
 
-console.log('testing');
-
 app.listen(PORT, HOST, (): void => console.log(`Server started on ${PORT}`));
